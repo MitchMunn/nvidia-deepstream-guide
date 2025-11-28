@@ -6,8 +6,8 @@ A Gst Buffer is the basic unit of data transfer in GStreamer, where each Buffer 
 
 We see this structure below:
 
-![[deepstream_metadata.png]]
-User-specific data can be attached at any of the batch, frame, or object level (see [[2_Metadata#Attaching User Metadata|Attaching User Metadata]]). This is useful for attaching additional metadata specific to your application.
+![deepstream_metadata](deepstream_metadata.png)
+User-specific data can be attached at any of the batch, frame, or object level (see [](2_Metadata.md#Attaching%20User%20Metadata|Attaching%20User%20Metadata)). This is useful for attaching additional metadata specific to your application.
 
 - `NvDsBatchMeta` : the basic metadata structure at the 'batch level'. Attached within the `Gst-nvdsstreammux` plugin.
 - `NvDsFrameMeta`: metadata at the 'frame level'. Created in `nvstreammux` and populated by the primary inference plugin (PGIE) such as `nvinfer`, which will create the `NvDsFrameMeta`, and add it into the `NvDsBatchMeta.NvDsFrameMetalist`.
@@ -105,7 +105,7 @@ One thing to note is that `probe()` callbacks are synchronous and thus holds the
 
 ## Attaching User Metadata
 User specific metadata can be attached to the `NvDsBatchMeta` within a Gst Buffer at the batch, frame, object level.
-Referencing the code in [[2_Metadata#Accessing or Modifying Metadata|Accessing or Modifying Metadata]]. This is done by acquiring a user_meta object and setting some required fields in the object.
+Referencing the code in [](2_Metadata.md#Accessing%20or%20Modifying%20Metadata|Accessing%20or%20Modifying%20Metadata). This is done by acquiring a user_meta object and setting some required fields in the object.
 
 ```python
 # Creating the NvDsUserMeta object

@@ -67,4 +67,4 @@ convert = Gst.ElementFactory.make("nvvidconv", "nvvidconv-plugin")
 pipeline.add(convert)
 ```
 
-We would then use the `Gst-nvstreammux` plugin to move the our source into a batch in the pipeline, as shown [[4_Batching|here]].
+We would then use the `Gst-nvstreammux` plugin to move the our source into a batch in the pipeline, as shown [here](4_Batching.md).

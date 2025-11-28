@@ -82,7 +82,7 @@ The Bus is a messaging channel from pipeline elements back to the application. I
 Without a bus handler, the app may appear to 'hang'. 
 
 ### Pipeline
-A pipeline is an [[1_GStreamer_Basics#Elements|Element]] which contains other elements. It manages:
+A pipeline is an [](1_GStreamer_Basics.md#Elements|Element) which contains other elements. It manages:
 - State changes
 - Clocking
 - Bus Messages

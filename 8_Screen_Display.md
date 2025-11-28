@@ -11,7 +11,7 @@ nvvideoconvert.link(nvdsosd)
 nvdsosd.link(sink)
 ```
 
-Typically we would retrieve the sink pad of the nvdsosd element, and then add a 'pad probe' to the sink pad, such that we can inspect each buffer passing through the element. This is discussed in [[2_Metadata#Accessing or Modifying Metadata|Accessing or Modifying Metadata]].
+Typically we would retrieve the sink pad of the nvdsosd element, and then add a 'pad probe' to the sink pad, such that we can inspect each buffer passing through the element. This is discussed in [](2_Metadata.md#Accessing%20or%20Modifying%20Metadata|Accessing%20or%20Modifying%20Metadata).
 
 ```python
 osdsinkpad = nvdsosd.get_static_pad("sink")
