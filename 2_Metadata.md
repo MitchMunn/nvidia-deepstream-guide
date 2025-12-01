@@ -6,7 +6,7 @@ A Gst Buffer is the basic unit of data transfer in GStreamer, where each Buffer 
 
 We see this structure below:
 
-![deepstream_metadata](deepstream_metadata.png)
+![deepstream_metadata](media/deepstream_metadata.png)
 User-specific data can be attached at any of the batch, frame, or object level (see [](2_Metadata.md#Attaching%20User%20Metadata|Attaching%20User%20Metadata)). This is useful for attaching additional metadata specific to your application.
 
 - `NvDsBatchMeta` : the basic metadata structure at the 'batch level'. Attached within the `Gst-nvdsstreammux` plugin.
@@ -81,11 +81,8 @@ Args:
 		    except StopIteration:
 		        continue
 				
-			# Now we can Access or modify the metadata!
-			# In this example, lets just set aspects of the display.
-			txt_params = obj_meta.text_params
-			txt_params.display_text = "Example"
-			txt_params.font_params.font_name = "Serif"
+			# Now we can Access or modify the object metadata here! 
+			# ie obj_meta.text_params
 			
 			try:
 				# Advance the pointer in the linked list to grab the next frame

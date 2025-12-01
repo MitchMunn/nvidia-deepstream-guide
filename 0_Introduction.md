@@ -12,3 +12,4 @@ This repository aims to supplement the official [DeepStream documentation](https
 8. [Screen Display](8_Screen_Display.md)
 9. [Output Video Stream](9_Output_Video_Stream.md)
 10. [Output Message Payload](10_Output_Message_Payload.md)
+11. [Parallelism](11_Parallelism.md)

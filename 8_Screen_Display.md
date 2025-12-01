@@ -11,18 +11,28 @@ nvvideoconvert.link(nvdsosd)
 nvdsosd.link(sink)
 ```
 
-Typically we would retrieve the sink pad of the nvdsosd element, and then add a 'pad probe' to the sink pad, such that we can inspect each buffer passing through the element. This is discussed in [](2_Metadata.md#Accessing%20or%20Modifying%20Metadata|Accessing%20or%20Modifying%20Metadata).
+Typically we would retrieve the sink pad of the nvdsosd element, and then add a 'pad probe' to the sink pad, such that we can inspect each buffer passing through the element. This is discussed in [Metadata](2_Metadata.md#Accessing%20or%20Modifying%20Metadata|Accessing%20or%20Modifying%20Metadata).
 
 ```python
 osdsinkpad = nvdsosd.get_static_pad("sink")
 osdsinkpad.add_probe(Gst.PadProbeType.BUFFER, osd_sink_pad_buffer_probe, 0)
 ```
 
-Within the `osd_sink_pad_buffer_probe` function at the `NvDsObjectMeta` level, we can update the parameters of the display.
+Referring to the `osd_sink_pad_buffer_probe` function example in [Metadata](2_Metadata.md#Accessing%20or%20Modifying%20Metadata|Accessing%20or%20Modifying%20Metadata), we can update the parameters of the display.
 
 ```python
-# Now we can access and set aspects of the display.
-txt_params = obj_meta.text_params
-txt_params.display_text = "Example"
-txt_params.font_params.font_name = "Serif"
+def osd_sink_pad_buffer_probe(pad: Gst.Pad, info: Gst.PadProbeInfo, u_data: Any):
+	...
+	while l_frame is not None:
+		try:
+		...
+		
+		while l_obj is not None:
+		    try:
+			...
+			
+			# Now we can access and set aspects of the display.for the objects.
+			txt_params = obj_meta.text_params
+			txt_params.display_text = "Example"
+			txt_params.font_params.font_name = "Serif"
 ```

@@ -3,8 +3,8 @@ NVIDEA Deepstream will batch different sources (ie multiple cameras) such that w
 - A single buffer
 - With multiple frames
 - Each frame containing potentially multiple objects
-This is critical so that subsequent processes such as inference can do multiple frames simultaneously. This batching process is performed by the ***GST-nvstreammux plugin***. A Multiplexer (MUX) takes several input buffers from the sources and can synthesize a single output signal.
 
+This is critical so that subsequent processes such as inference can do multiple frames simultaneously. This batching process is performed by the ***GST-nvstreammux plugin***. A Multiplexer (MUX) takes several input buffers from the sources and can synthesize a single output signal.
 
 In order for *GST-nvstreammux* to operate, it is unique in that it needs to dynamically create a new input pad for every source you want to connect.  *sink_%u* is the required pattern for dynamically doing this, where 'sink' identifies an input pad, and '%u' is a format specifier that gets replaced by an index number.
 
